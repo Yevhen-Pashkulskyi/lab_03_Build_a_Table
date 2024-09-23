@@ -1,3 +1,4 @@
+//Pashkulskyi Yevhen AS-246
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
