@@ -6,7 +6,7 @@ int run() {
     float func, min_range, max_range, step;
     float a_value, b_value, x_value;
 
-    printf("Input function value \'a\': ");
+    printf("Input value \'a\': ");
     do {
         scanf("%f", &a_value);
         if (a_value <= 0) {
@@ -14,7 +14,7 @@ int run() {
         } else break;
     } while (true);
 
-    printf("Input function value \'b\': ");
+    printf("Input value \'b\': ");
     do {
         scanf("%f", &b_value);
         if (b_value == a_value * -1) {
