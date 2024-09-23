@@ -5,20 +5,22 @@
 
 int run() {
     float func, min_range, max_range, step;
-    float a_value, b_value, x_value;
+    float a_val, b_val, x_val;
 
-    printf("Input value \'a\': \n");
+    printf("Input value \'a\': \n"); // вивід повідомлення для користувача
+    //цикл в якому виконується хоча б один раз код в тілі
     do {
-        scanf("%f", &a_value);
-        if (a_value <= 0) {
-            printf("\'a\' should be greater than \'0\': \n");
-        } else break;
-    } while (true);
+        scanf("%f", &a_val); //введення користувачем значення
+        if (a_val <= 0) {
+            //умова якщо знаяення а меньше 0 то виводить повідомлення
+            printf("\'a\' should be greater than \'0\': \n"); //повідомлення при некоректному вводі значення
+        } else break; //якщо все коректно то виходимо з циклу
+    } while (true); //умова циклу завжди істина поки не виконається умова
 
     printf("Input value \'b\': \n");
     do {
-        scanf("%f", &b_value);
-        if (b_value == a_value * -1) {
+        scanf("%f", &b_val);
+        if (b_val == a_val * -1) {
             printf("\'b\' should not be equal to the reciprocal of \'a\': \n");
         } else break;
     } while (true);
@@ -39,14 +41,16 @@ int run() {
         } else break;
     } while (true);
 
-    x_value = min_range;
+    x_val = min_range;
     printf("   X\t  Y\n");
-    while (x_value <= max_range) {
-        printf("%.4f\t", x_value);
-        func = sin(fabs(x_value) / (2 * sqrt(a_value))) +
-               pow(cos(pow(x_value, 3) / (a_value + b_value)), 2);
+    // цикл який виконує за умови наприклад як в цьому поки x_val<=max_range
+    while (x_val <= max_range) {
+        printf("%.4f\t", x_val);
+        //розрахунок завдання з витримкою порядка виконання операцій відповідно до їх пріоритету
+        func = sin(fabs(x_val) / (2 * sqrt(a_val))) +
+               pow(cos(pow(x_val, 3) / (a_val + b_val)), 2);
         printf("%.4f\n", func);
-        x_value = x_value + step;
+        x_val = x_val + step;
     }
     return 0;
 }
